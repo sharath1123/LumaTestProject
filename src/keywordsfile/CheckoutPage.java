@@ -57,6 +57,7 @@ public class CheckoutPage extends commonMethods{
 		catch(Exception e)
     	{
     		e.printStackTrace();
+    		Assert.assertTrue(false);
     	}
 	}
 	
@@ -82,6 +83,7 @@ public class CheckoutPage extends commonMethods{
 		catch(Exception e)
     	{
     		e.printStackTrace();
+    		Assert.assertTrue(false);
     	}
 	}
 	public void verifySuccessMessageAndcaptureOrder()
@@ -102,6 +104,7 @@ public class CheckoutPage extends commonMethods{
 		catch(Exception e)
     	{
     		e.printStackTrace();
+    		Assert.assertTrue(false);
     	}
 	}
 }
