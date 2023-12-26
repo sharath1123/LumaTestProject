@@ -47,7 +47,7 @@ public class TestCasesFile extends commonMethods {
 				object3.selectWatchesOption();
 				object3.filterMetal();
 				object3.addItemtoCart();
-				object2.addMoreQty();
+				object2.validateInitialPrice();
 				object2.editQuantity();
 				object2.verifyQuantityandProceed();
 				object4.addShippingAddress();

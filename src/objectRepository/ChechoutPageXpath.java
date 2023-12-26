@@ -16,11 +16,8 @@ public class ChechoutPageXpath {
 	public static By radio_shippingMethod= By.xpath("//input[@type='radio' and @value='flatrate_flatrate']");
 	public static By button_Next= By.xpath("//span[text()='Next']");
 	public static By checkbox_BillingAdd= By.xpath("//input[@type='checkbox' and @name='billing-address-same-as-shipping']");
-	public static By button_palceOrder = By.xpath("//button[@title ='Place Order']");
-	public static By text_successMessage = By.xpath("//button[@title ='Place Order']");
-	public static By text_orderNumber = By.xpath("//button[@title ='Place Order']");
-	
-	
-	//span[@class='base']
-	//a[@class='order-number']//strong
+	public static By button_palceOrder = By.xpath("//button[@type='submit' and @title='Place Order']");
+	public static By text_successMessage = By.xpath("//h1[@class='page-title']//span");
+	public static By text_orderNumber = By.xpath("//p[text()='Your order number is: ']//a//strong");
+	public static By shippingAddress = By.xpath("//div[contains(@class,'shipping-address-item selected')]");
 }

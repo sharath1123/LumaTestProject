@@ -1,36 +1,14 @@
 package keywordsfile;
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.Set;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import objectRepository.commonMethodsXpath;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import dataProvider.configFileReader;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import objectRepository.HomePageXpath;
-import objectRepository.CartPageXpath;
+
 
 
 
@@ -66,9 +44,21 @@ public class commonMethods extends configFileReader{
 	    	
 	    	}
 		}
-		
-
-		
+		public void JsClick(WebElement Element)
+		{
+			try
+			{	
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click()", Element);
+			}
+			catch(Exception e)
+	    	{
+				
+	    		e.printStackTrace();
+	    		Assert.assertTrue(false);
+	    	
+	    	}
+		}
 		
 		public void scrolldown()
 		{
@@ -83,5 +73,35 @@ public class commonMethods extends configFileReader{
 	    		e.printStackTrace();
 	    	}
 		}
+		
+		public boolean VerifythePresenceOfElement(By Element)
+		{
+			try
+			{	
+				if(driver.findElements(Element).size() != 0){
+					System.out.println("Element is Present");
+					return true;
+					}else{
+					System.out.println("Element is Absent");
+					return false;
+					}
+			}
+			catch(Exception e)
+	    	{
+				
+	    		e.printStackTrace();
+	    		Assert.assertTrue(false);
+	    		return false;
+	    	
+	    	}
+		}
+		public void highlight(WebElement Element) {
+		    if (driver instanceof JavascriptExecutor) {
+		        ((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid red'", Element);
+		    
+		}
+		
+
 			
 		}
+}
